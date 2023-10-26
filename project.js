@@ -20,6 +20,7 @@ async function fetchData(apiUrl) {
     }
     const data = await response.json();
     return data;
+    
   } catch (error) {
     console.error('An error occurred:', error);
     return null;

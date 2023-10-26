@@ -93,7 +93,7 @@ function displayBooks() {
 
     // Create a "Download" button
     const downloadBtn = document.createElement("button");
-    downloadBtn.classList.add("btn", "btn-primary"); // Add CSS classes for styling
+    downloadBtn.classList.add("btn", "btn-primary"); 
     downloadBtn.textContent = "borrow";
 
     // Add a click event listener to the "Download" button

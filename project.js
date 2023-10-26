@@ -98,7 +98,7 @@ function displayBooks() {
 
     // Add a click event listener to the "Download" button
     downloadBtn.addEventListener("click", () => {
-      // Add your custom download logic here
+      
       alert(`Downloading book: ${book.title}`);
     });
     const likeBtn = document.createElement("button");

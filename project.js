@@ -87,7 +87,8 @@ function displayBooks() {
 
     // Create an author element
     const authorElement = document.createElement("p");
-    authorElement.classList.add("card-text"); // Add CSS class for styling
+    authorElement.classList.add("card-text"); 
+    // add class for css styling
     authorElement.textContent = `Author: ${book.author_name.join(', ')}`;
     cardBody.appendChild(authorElement);
 

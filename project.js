@@ -94,22 +94,38 @@ function displayBooks() {
     // Create a "Download" button
     const downloadBtn = document.createElement("button");
     downloadBtn.classList.add("btn", "btn-primary"); // Add CSS classes for styling
-    downloadBtn.textContent = "Download";
+    downloadBtn.textContent = "borrow";
 
     // Add a click event listener to the "Download" button
     downloadBtn.addEventListener("click", () => {
       
-      alert(`Downloading book: ${book.title}`);
+      alert(`borrow book: ${book.title}`);
     });
     const likeBtn = document.createElement("button");
     likeBtn.classList.add("btn", "btn-success"); // Add CSS classes for styling
     likeBtn.textContent = "Like";
 
     // Add a click event listener to the "Like" button
-    likeBtn.addEventListener("click", () => {
+    likeBtn.addEventListener("like", () => {
       // Add your custom "Like" logic here
       alert(`Liked book: ${book.title}`);
     });
+     // Create a comment area
+     const commentInput = document.createElement("textarea");
+     commentInput.classList.add("form-control"); // Add Bootstrap class for styling
+     commentInput.placeholder = "Add your comment...";
+     cardBody.appendChild(commentInput);
+ 
+     // Create a submit button for comments
+     const submitCommentBtn = document.createElement("button");
+     submitCommentBtn.classList.add("btn", "btn-primary");
+     submitCommentBtn.textContent = "Submit Comment";
+     submitCommentBtn.addEventListener("submit", () => {
+       const commentText = commentInput.value;
+       alert(`Submitted comment: "${commentText}" for book: ${book.title}`);
+       // You can handle the comment submission here
+     });
+     cardBody.appendChild(submitCommentBtn);
 
     cardBody.appendChild(downloadBtn);
 
@@ -121,6 +137,19 @@ function displayBooks() {
 }
 
 
+document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent the form from submitting
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  
+  console.log("Name: " + name);
+  console.log("Email: " + email);
+  console.log("Feedback: " + message);
+
+  
+});
 
 
 

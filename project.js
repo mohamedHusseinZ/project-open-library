@@ -7,7 +7,6 @@ const baseUrl = 'https://openlibrary.org';
 const searchUrl = '/search.json?q=the+lord+of+the+rings';
 const titleSearchUrl = '/search.json?title=the+lord+of+the+rings';
 const authorSearchUrl = '/search.json?author=tolkien&sort=new';
-const paginationUrl = '/search.json?q=the+lord+of+the+rings&page=2';
 const authorsUrl = '/search/authors.json?q=twain';
 
 // Function to fetch data from the API
@@ -16,14 +15,11 @@ async function fetchData(apiUrl) {
 
   try {
     const response = await fetch(fullUrl);
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-      return data;
-    } else {
-      console.error(`Failed to fetch data. Status code: ${response.status}`);
-      return null;
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data. Status code: ${response.status}`);
     }
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error('An error occurred:', error);
     return null;
@@ -36,7 +32,7 @@ async function pushDataToBooks(apiUrl) {
     const data = await fetchData(apiUrl);
     if (data) {
       books.push(...data.docs);
-      console.log(data);
+      console.log(`Fetched data from: ${apiUrl}`);
     }
   } catch (error) {
     console.error('An error occurred:', error);
@@ -45,60 +41,75 @@ async function pushDataToBooks(apiUrl) {
 
 // Fetch data from the APIs and push it to the books array
 async function fetchAndPushAllData() {
-  await pushDataToBooks(searchUrl);
-  await pushDataToBooks(titleSearchUrl);
-  await pushDataToBooks(authorSearchUrl);
-  await pushDataToBooks(paginationUrl);
-  await pushDataToBooks(authorsUrl);
+  const apiUrls = [searchUrl, titleSearchUrl, authorSearchUrl, authorsUrl];
+
+  for (const apiUrl of apiUrls) {
+    await pushDataToBooks(apiUrl);
+  }
+
+  console.log('All data fetched and pushed to the books array');
+  displayBooks(); // Call a function to display the books or process them as needed
 }
 
-// Display books on the web page
-// function displayBooks() {
-//   const bookslist = document.getElementById("bookslist");
-//   bookslist.innerHTML = ''; // Clear the existing content
+fetchAndPushAllData();
 
-//   books.forEach(book => {
-//     const div = document.createElement("div");
-//     const titleElement = document.createElement("h2");
-//     titleElement.textContent = book.title;
-//     const authorElement = document.createElement("p");
-//     authorElement.textContent = `Author: ${book.author_name.join(', ')}`;
 
-//     div.appendChild(titleElement);
-//     div.appendChild(authorElement);
-//     bookslist.appendChild(div);
-//   });
-// }
 function displayBooks() {
   const bookslist = document.getElementById("bookslist");
   bookslist.innerHTML = ''; // Clear the existing content
 
   books.forEach(book => {
-    const div = document.createElement("div");
-    const titleElement = document.createElement("h2");
-    titleElement.textContent = book.title;
+    // Create a div to represent a card
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("card"); // Add CSS class for styling
 
     // Create an image element for the cover photo
     const coverElement = document.createElement("img");
+    coverElement.classList.add("card-img-top"); // Add CSS class for styling
     if (book.cover_i) {
-      // If a cover image is available (cover_i field exists in the API response)
       const coverImageUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
       coverElement.src = coverImageUrl;
     } else {
-      // Use a default image or placeholder if a cover image is not available
-      coverElement.src = 'default-cover-image.jpg';
+      coverElement.src = 'default-cover-image.jpg'; // Use a default image or placeholder
     }
+    cardDiv.appendChild(coverElement);
 
+    // Create a div for the card body
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body"); // Add CSS class for styling
+
+    // Create a title element
+    const titleElement = document.createElement("h5");
+    titleElement.classList.add("card-title"); // Add CSS class for styling
+    titleElement.textContent = book.title;
+    cardBody.appendChild(titleElement);
+
+    // Create an author element
     const authorElement = document.createElement("p");
+    authorElement.classList.add("card-text"); // Add CSS class for styling
     authorElement.textContent = `Author: ${book.author_name.join(', ')}`;
+    cardBody.appendChild(authorElement);
 
-    div.appendChild(titleElement);
-    div.appendChild(coverElement);
-    div.appendChild(authorElement);
+    // Create a "Download" button
+    const downloadBtn = document.createElement("button");
+    downloadBtn.classList.add("btn", "btn-primary"); // Add CSS classes for styling
+    downloadBtn.textContent = "Download";
 
-    bookslist.appendChild(div);
+    // Add a click event listener to the "Download" button
+    downloadBtn.addEventListener("click", () => {
+      // Add your custom download logic here
+      alert(`Downloading book: ${book.title}`);
+    });
+
+    cardBody.appendChild(downloadBtn);
+
+    cardDiv.appendChild(cardBody);
+
+    bookslist.appendChild(cardDiv);
   });
 }
+
+
 
 
 

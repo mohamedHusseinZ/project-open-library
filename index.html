@@ -5,15 +5,7 @@
     <Link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
-    <h2>User Login</h2>
-    <form action="user-login.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Login">
-    </form>
+
   
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -40,12 +32,8 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Feedback</a> <!-- Add Feedback link -->
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a> <!-- Add Contact link -->
-              </li>
+            
+            
               
             </form>
           </div>
@@ -53,13 +41,19 @@
       </nav>
       <header>
         <nav>
+          <h2>User Login</h2>
+          <form action="user-login.php" method="post">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required><br><br>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required><br><br>
+              <input type="submit" value="Login">
+          </form>
             <div class="logo">Open Library</div>
             <ul class="nav-menu">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Books</a></li>
-                <li><a href="#">Authors</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="https://www.theguardian.com/books/2019/sep/21/best-books-of-the-21st-century">Books</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -92,7 +86,7 @@
             <h3>User-Friendly Interface</h3>
             <p>Navigate our library with ease and find what you're looking for.</p>
         </div>
-        <!-- Add more features as needed -->
+        
     </section>
 
     <!-- Testimonials Section -->
@@ -102,7 +96,7 @@
             <blockquote>"I love Open Library! It has made my research so much easier."</blockquote>
             <cite>John Doe</cite>
         </div>
-        <!-- Add more testimonials as needed -->
+        
     </section>
 
     <!-- Blog Posts or Content Teasers Section -->
@@ -110,58 +104,86 @@
         <h2>Latest Blog Posts</h2>
         <div class="blog-post">
             <img src="blog-post-1.jpg" alt="Blog Post 1">
-            <h3><a href="#">10 Must-Read Novels of the Year</a></h3>
+            <h3><a href="https://www.hostinger.com/tutorials/blog-examples#Best_Tech_Blogs">10 Must-Read Novels of the Year</a></h3>
             <p>Discover the best books of the year in our latest blog post.</p>
         </div>
         <div class="blog-post">
             <img src="blog-post-2.jpg" alt="Blog Post 2">
-            <h3><a href="#">How to Find Rare Books</a></h3>
+            <h3><a href="https://www.theguardian.com/books/2019/sep/21/best-books-of-the-21st-century">How to Find Rare Books</a></h3>
             <p>Learn the secrets to finding rare and valuable books for your collection.</p>
         </div>
         <!-- Add more blog posts or content teasers as needed -->
     </section>
 
-    <!-- Newsletter Signup Section -->
-    <section class="newsletter">
-        <h2>Subscribe to Our Newsletter</h2>
-        <p>Stay updated with our latest releases and news. Subscribe today and get a free e-book.</p>
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email">
-            <button class="cta-button" type="submit">Subscribe</button>
-        </form>
-    </section>
 
-    <!-- Contact Information Section -->
-    <section class="contact">
+
+ 
+
+    
+   
+
+   
+      <p class="container"></p>
+      <diV id="bookslist"></diV>
+      <div id="feedback">
+        <h2>Feedback</h2>
+        <p>We'd love to hear your thoughts! Please provide your feedback below:</p>
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <label for="message">Feedback:</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Your Feedback"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </form>
+      </div>
+      
+
+
+          <!-- Newsletter Signup Section -->
+    <section class="newsletter">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Stay updated with our latest releases and news. Subscribe today and get a free e-book.</p>
+      <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email">
+          <button class="cta-button" type="submit">Subscribe</button>
+      </form>
+  </section>
+
+      <section class="contact">
         <h2>Contact Us</h2>
         <p>If you have any questions or need assistance, please feel free to contact us:</p>
         <p>Email: contact@openlibrary.com</p>
         <p>Phone: (+123) 456-7890</p>
     </section>
-
-    <!-- Social Media Links Section -->
-    <section class="social-media">
-        <h2>Connect with Us</h2>
-        <a href="#" class="social-icon"><img src="facebook-icon.png" alt="Facebook"></a>
-        <a href="#" class="social-icon"><img src="twitter-icon.png" alt="Twitter"></a>
-        <a href="#" class="social-icon"><img src="instagram-icon.png" alt="Instagram"></a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-menu">
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="copyright">© 2023 Open Library. All rights reserved.</div>
-    </footer>
-      <p class="container"></p>
-      <diV id="bookslist"></diV>
       
       
     <script src="project.js"></script>
+    <section class="social-media">
+      <h2>Connect with Us</h2>
+      <a href="#" class="social-icon"><img src="facebook-icon.png" alt="Facebook"></a>
+      <a href="#" class="social-icon"><img src="twitter-icon.png" alt="Twitter"></a>
+      <a href="#" class="social-icon"><img src="instagram-icon.png" alt="Instagram"></a>
+  </section>
+   
+        <div class="footer-menu">
+            <ul>
+                <li><a href="https://termify.io/privacy">Privacy Policy</a></li>
+                <li><a href="https://support.scribd.com/hc/en-us/articles/210129326-General-Terms-of-Use">Terms of Service</a></li>
+                <li><a href="https://support.scribd.com/hc/en-us">FAQ</a></li>
+            </ul>
+            <li><a href="#">Home</a></li>
+        </div>
+      
+    </footer>
+    <div class="copyright">© 2023 Open Library. All rights reserved.</div>
+  </footer>
 </body>
 </html>

@@ -100,10 +100,20 @@ function displayBooks() {
       // Add your custom download logic here
       alert(`Downloading book: ${book.title}`);
     });
+    const likeBtn = document.createElement("button");
+    likeBtn.classList.add("btn", "btn-success"); // Add CSS classes for styling
+    likeBtn.textContent = "Like";
+
+    // Add a click event listener to the "Like" button
+    likeBtn.addEventListener("click", () => {
+      // Add your custom "Like" logic here
+      alert(`Liked book: ${book.title}`);
+    });
 
     cardBody.appendChild(downloadBtn);
 
     cardDiv.appendChild(cardBody);
+    cardBody.appendChild(likeBtn);
 
     bookslist.appendChild(cardDiv);
   });

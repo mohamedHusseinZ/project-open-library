@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <Link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <h2>User Login</h2>
+    <form action="user-login.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+  
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Feedback</a> <!-- Add Feedback link -->
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a> <!-- Add Contact link -->
+              </li>
+              
+            </form>
+          </div>
+        </div>
+      </nav>
+      <header>
+        <nav>
+            <div class="logo">Open Library</div>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Authors</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="hero-image.jpg" alt="Library Image">
+        <h1>Welcome to Open Library</h1>
+        <p>Your source for unlimited reading.</p>
+        <a href="#" class="cta-button">Get Started</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>Welcome to Open Library, your gateway to a world of knowledge. Our mission is to make books and educational resources accessible to everyone.</p>
+        <p>Our dedicated team is passionate about spreading the joy of reading and learning.</p>
+    </section>
+
+    <!-- Features or Services Section -->
+    <section class="features">
+        <h2>Key Features</h2>
+        <div class="feature">
+            <img src="feature-1.png" alt="Feature 1">
+            <h3>Extensive Collection</h3>
+            <p>Access a vast collection of books and resources on various topics.</p>
+        </div>
+        <div class="feature">
+            <img src="feature-2.png" alt="Feature 2">
+            <h3>User-Friendly Interface</h3>
+            <p>Navigate our library with ease and find what you're looking for.</p>
+        </div>
+        <!-- Add more features as needed -->
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <blockquote>"I love Open Library! It has made my research so much easier."</blockquote>
+            <cite>John Doe</cite>
+        </div>
+        <!-- Add more testimonials as needed -->
+    </section>
+
+    <!-- Blog Posts or Content Teasers Section -->
+    <section class="blog">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-post">
+            <img src="blog-post-1.jpg" alt="Blog Post 1">
+            <h3><a href="#">10 Must-Read Novels of the Year</a></h3>
+            <p>Discover the best books of the year in our latest blog post.</p>
+        </div>
+        <div class="blog-post">
+            <img src="blog-post-2.jpg" alt="Blog Post 2">
+            <h3><a href="#">How to Find Rare Books</a></h3>
+            <p>Learn the secrets to finding rare and valuable books for your collection.</p>
+        </div>
+        <!-- Add more blog posts or content teasers as needed -->
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with our latest releases and news. Subscribe today and get a free e-book.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email">
+            <button class="cta-button" type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, please feel free to contact us:</p>
+        <p>Email: contact@openlibrary.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </section>
+
+    <!-- Social Media Links Section -->
+    <section class="social-media">
+        <h2>Connect with Us</h2>
+        <a href="#" class="social-icon"><img src="facebook-icon.png" alt="Facebook"></a>
+        <a href="#" class="social-icon"><img src="twitter-icon.png" alt="Twitter"></a>
+        <a href="#" class="social-icon"><img src="instagram-icon.png" alt="Instagram"></a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-menu">
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="copyright">© 2023 Open Library. All rights reserved.</div>
+    </footer>
+      <p class="container"></p>
+      <diV id="bookslist"></diV>
+      
+      
+    <script src="project.js"></script>
+</body>
+</html>

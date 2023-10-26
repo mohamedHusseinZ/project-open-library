@@ -57,7 +57,7 @@ fetchAndPushAllData();
 
 function displayBooks() {
   const bookslist = document.getElementById("bookslist");
-  bookslist.innerHTML = ''; // Clear the existing content
+  bookslist.innerHTML = ''; 
 
   books.forEach(book => {
     // Create a div to represent a card

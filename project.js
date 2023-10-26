@@ -102,7 +102,7 @@ function displayBooks() {
       alert(`borrow book: ${book.title}`);
     });
     const likeBtn = document.createElement("button");
-    likeBtn.classList.add("btn", "btn-success"); // Add CSS classes for styling
+    likeBtn.classList.add("btn", "btn-success"); 
     likeBtn.textContent = "Like";
 
     // Add a click event listener to the "Like" button
